@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio</title>
+  <style>
+    /* --- Fuente elegante y limpia --- */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f3fa;
+      color: #333;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    /* --- Encabezado --- */
+    header {
+      background: linear-gradient(135deg, #4b007d, #663a7f);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -30%;
+      width: 160%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent 70%);
+      transform: rotate(10deg);
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      z-index: 2;
+      position: relative;
+    }
+
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* --- Navegación --- */
+    nav {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b007d;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background-color: #e6d5f3;
+      color: #2b014b;
+    }
+
+    /* --- Secciones generales --- */
+    section {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.4em;
+      color: #4b007d;
+      margin-bottom: 20px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: #c98cec;
+      margin: 10px auto 25px;
+      border-radius: 2px;
+    }
+
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #b484d9, transparent);
+      margin: 60px 0;
+    }
+
+    /* --- Galería --- */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .galeria img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* --- Contacto --- */
+    .contacto {
+      background: linear-gradient(135deg, #3c0b4a, #a875c1);
+      color: white;
+      padding: 80px 20px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+    }
+
+    .contacto h2 {
+      color: white;
+    }
+
+    .contacto form {
+      max-width: 600px;
+      margin: 40px auto 0;
+      text-align: left;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .contacto input,
+    .contacto textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+
+    .contacto button {
+      background-color: white;
+      color: #4b007d;
+      border: none;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .contacto button:hover {
+      background-color: #d2a6ea;
+      color: white;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #f1f1f1;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95em;
+      color: #777;
+      letter-spacing: 0.5px;
+    }
+
+    footer span {
+      color: #4b007d;
+      font-weight: 600;
+    }
+
+    /* --- Animaciones suaves --- */
+    [id] {
+      scroll-margin-top: 100px;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <h1>Bienvenido a Mi Portafolio</h1>
+    <p>Todo lo puedo en Cristo que me fortalece</p>
+    <p><em>Filipenses 4:13</em></p>
+  </header>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <nav>
+    <a href="http://127.0.0.1:5500/Paginas/Menu.html">Autobiografia</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#genericas">Genéricas</a>
+    <a href="#comunicaciones">Comunicaciones</a>
+    <a href="#sociales">Sociales</a>
+    <a href="#matematicas">Matemáticas</a>
+    <a href="#experimentales">Experimentales</a>
+    <a href="#reflexion">Reflexión</a>
+  </nav>
+
+  <!-- SECCIONES PRINCIPALES -->
+  <section id="vision">
+    <h2>Visión</h2>
+    <p>-------------</p>
+  </section>
+
+  <hr>
+
+  <section id="Mision">
+    <h2>Misión</h2>
+    <p>------------</p>
+  </section>
+
+  <hr>
+
+  <section id="cosmovisión">
+    <h2>Cosmovisión</h2>
+    <p>---------------</p>
+  </section>
+
+  <hr>
+
+  <section id="experimentales">
+    <h2>Sección de Experimentales</h2>
+    <p>Hola</p>
+  </section>
+
+  <hr>
+
+  <section id="matematicas">
+    <h2>Sección de Matemáticas</h2>
+  </section>
+
+  <hr>
+
+  <section id="genericas">
+    <h2>Sección de Genéricas</h2>
+    <p>Aquí puedes agregar información general, proyectos o temas variados relacionados con tu portafolio o tus estudios.</p>
+  </section>
+
+  <hr>
+
+  <section id="sociales">
+    <h2>Sección de Sociales</h2>
+    <p>---------------</p>
+  </section>
+
+  <hr>
+
+  <section id="comunicaciones">
+    <h2>Sección de Comunicaciones</h2>
+    <p>Esta parte puede incluir tus redes sociales, proyectos de comunicación, presentaciones o trabajos colaborativos.</p>
+  </section>
+
+  <hr>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <div class="galeria">
+      <img src="https://picsum.photos/400/250?random=1" alt="Imagen 1">
+      <img src="https://picsum.photos/400/250?random=2" alt="Imagen 2">
+      <img src="https://picsum.photos/400/250?random=3" alt="Imagen 3">
+      <img src="https://picsum.photos/400/250?random=4" alt="Imagen 4">
+    </div>
+  </section>
+
+  <hr>
+
+  <section id="reflexion">
+    <h2>Reflexión Final</h2>
+  </section>
+
+  <hr>
+
+  <section class="contacto" id="contacto">
+    <h2>Contáctame</h2>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    © <span>Samuel Alejandro Andrade Cuevas</span>
+  </footer>
+</body>
+</html>
